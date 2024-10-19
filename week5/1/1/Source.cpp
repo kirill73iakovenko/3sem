@@ -13,9 +13,9 @@ private:
     double money;
     double student_time;
     double time;
-    // знания измеряются в часах учебы
+    // Р—РЅР°РЅРёСЏ РёР·РјРµСЂСЏСЋС‚СЃСЏ РІ С‡Р°СЃР°С…
     double knowlenge=0; 
-    // опыт работы измеряются в рабочих часах
+    // РћРїС‹С‚ СЂР°Р±РѕС‚С‹ РёР·РјРµСЂСЏРµС‚СЃСЏ РІ С‡Р°СЃР°С…
     double work_experience=0;
 public:
     int mark;
