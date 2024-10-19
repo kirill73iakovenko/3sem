@@ -57,14 +57,17 @@ public:
 
     double Get_XP() {
         return XP;
+        Check();
     }
 
     double Get_money() {
         return money;
+        Check();
     }
 
     double Get_time() {
         return time;
+        Check();
     }
 
     void Food(double v_money) {
@@ -140,7 +143,8 @@ int main() {
     int age1 = 20;
     double XP1 = 100000;
     double money1 = 1000000;
-    Student Student1{ name1, surname1, group1, age1, XP1, money1, 10 };
+    Student Student1{ name1, surname1, group1, age1, XP1, money1, 9};
+    Student1.Get_student();
     Student1.Studing(24);
     cout << "Student1 XP after 24 hours studying: " << Student1.Get_XP() << endl;
     
