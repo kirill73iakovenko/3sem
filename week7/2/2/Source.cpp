@@ -198,9 +198,9 @@ int main() {
     spellBook.addSpell(householdFactory->createWeakSpell("Clean table"));
 
     spellBook.addSpell(unforgivenFactory->createStrongSpell("Kill human"));
-    spellBook.addSpell(unforgivenFactory->createStrongSpell("Kill mosquito"));
+    spellBook.addSpell(unforgivenFactory->createWeakSpell("Kill mosquito"));
 
-    spellBook.addSpell(unforgivenFactory->createStrongSpell("Kill fish"));
+    spellBook.addSpell(unforgivenFactory->createWeakSpell("Kill fish"));
 
 
 
