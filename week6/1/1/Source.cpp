@@ -10,6 +10,7 @@ protected:
 	int age;
 	string breed;
 	string name;
+	int XP;
 public:
 	Animal(int p_age, string p_breed, string p_name)
 		: age{ p_age }, breed{ p_breed }, name{ p_name } {}
@@ -25,9 +26,6 @@ public:
 };
 
 class Dog : public Animal {
-	friend class Vet;
-private:
-	int XP;
 public:
 	Dog(int p_age, string p_breed, string p_name) : Animal(p_age, p_breed, p_name){}
 	void Set_XP(int p_XP) {
@@ -44,9 +42,6 @@ public:
 
 
 class Cat : public Animal {
-	friend class Vet;
-private:
-	int XP;
 public:
 	Cat(int p_age, string p_breed, string p_name) : Animal(p_age, p_breed, p_name) {}
 	void Set_XP(int p_XP) {
@@ -66,12 +61,13 @@ private:
 	const string name;
 	int age;
 	int num_of_animals = 0;
+	const int Max_of_animals = 5;
 	Animal** animals;
 
 public:
 	Owner(string p_name, int p_age) : name(p_name), age(p_age)
 	{
-		animals = new Animal * [5];
+		animals = new Animal * [Max_of_animals];
 	}
 	~Owner() {
 		for (int i = 0; i < num_of_animals; ++i) {
@@ -81,7 +77,7 @@ public:
 	}
 
 	void Add_animal(Animal* animal) {
-		if (num_of_animals < 5) {
+		if (num_of_animals < Max_of_animals) {
 			animals[num_of_animals] = animal;
 			num_of_animals += 1;
 		}
@@ -116,7 +112,7 @@ private:
 	const string name;
 	int expeience;
 	int examination(Animal* animal) {
-		return animal->Get_XP();
+		return animal->XP;
 	}
 	string treatment(Animal * animal) {
 		string conc;
